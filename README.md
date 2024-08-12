@@ -1,9 +1,10 @@
 Strata Inline
 =============
 
-__This dokuwiki plugin is no longer maintained. Due to time constraints and no longer using this plugin myself, I can no longer properly maintain it.__
+This companion plugin to Strata was abandoned by his original author Brend Wanders.
+I now reactivate it for whoever might need it.
 
-This plugin depends on [bwanders/dokuwiki-strata](https://github.com/bwanders/dokuwiki-strata).
+This plugin depends on [fkaag71/dokuwiki-strata](https://github.com/fkaag71/dokuwiki-strata).
 
 Strata Inline is an inline data entry and query plugin for dokuwiki.
 
