@@ -20,7 +20,7 @@ class syntax_plugin_stratainline_entry extends syntax_plugin_strata_entry {
         $this->Lexer->addSpecialPattern('\[\(.+?:.+?\)\]',$mode, 'plugin_stratainline_entry');
     }
 
-    function preprocess($match, &$result) {
+    function preprocess($match, $state, $pos, &$handler, &$result) {
         $p = $this->syntax->getPatterns();
 
         preg_match("/^\[\(({$p->predicate}{$p->type}?\*?)\s*:({$p->any})\)\]$/",$match,$captures);
@@ -38,7 +38,7 @@ class syntax_plugin_stratainline_entry extends syntax_plugin_strata_entry {
         return '';
     }
 
-    function render($mode, &$R, $data) {
+    function render($mode, Doku_Renderer $R, $data) {
         global $ID;
 
         // pass problems or non-xhtml renders over to the parent

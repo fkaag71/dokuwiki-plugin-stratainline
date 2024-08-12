@@ -33,7 +33,7 @@ class syntax_plugin_stratainline_format extends DokuWiki_Syntax_Plugin {
         $this->Lexer->addSpecialPattern("\{\({$p->type}?\s*?{$p->aggregate}?\s*?\*?\s*?:\s*?{$p->any}?\)\}", $mode, 'plugin_stratainline_format');
     }
 
-    public function handle($match, $state, $pos, &$handler){
+    public function handle($match, $state, $pos, Doku_Handler $handler){
         $result = array(
             'type'=>'text',
             'hint'=> null,
@@ -89,7 +89,7 @@ class syntax_plugin_stratainline_format extends DokuWiki_Syntax_Plugin {
         return $result;
     }
 
-    public function render($mode, &$R, $data) {
+    public function render($mode, Doku_Renderer $R, $data) {
         global $ID;
 
         if($mode == 'xhtml' || $mode=='metadata') {

@@ -38,7 +38,7 @@ class syntax_plugin_stratainline_refentry extends DokuWiki_Syntax_Plugin {
         $this->Lexer->addSpecialPattern("\[\[{$p->predicate}~(?:(?:[^[\]]*?\[.*?\])|.*?)\]\]",$mode,'plugin_stratainline_refentry');
     }
 
-    public function handle($match, $state, $pos, &$handler){
+    public function handle($match, $state, $pos, Doku_Handler $handler){
         $p = $this->syntax->getPatterns();
 
         // match full pattern
@@ -72,7 +72,7 @@ class syntax_plugin_stratainline_refentry extends DokuWiki_Syntax_Plugin {
         );
     }
 
-    public function render($mode, &$R, $data) {
+    public function render($mode, Doku_Renderer $R, $data) {
         global $ID;
 
         if($mode == 'xhtml' || $mode=='metadata' || $mode=='preview_metadata') {

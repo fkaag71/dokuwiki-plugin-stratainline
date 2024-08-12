@@ -45,7 +45,7 @@ class syntax_plugin_stratainline_list extends syntax_plugin_strata_select {
         return $header."\n".$rest."\n".$footer;
     }
 
-    function render($mode, &$R, $data) {
+    function render($mode, Doku_Renderer $R, $data) {
         if($data == array() || isset($data['error'])) {
             if($mode == 'xhtml') {
                 $R->doc .= '<span class="strata-debug-message">';
